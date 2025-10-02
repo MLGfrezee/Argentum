@@ -1,0 +1,240 @@
+/* Heroes Page Styles */
+.heroes-section {
+    padding: 6rem 0 4rem;
+    min-height: 100vh;
+}
+
+.attribute-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.attr-btn {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid #e94560;
+    background: rgba(233, 69, 96, 0.1);
+    color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.attr-btn.active,
+.attr-btn:hover {
+    background: #e94560;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
+}
+
+.attr-icon {
+    font-size: 1.2rem;
+}
+
+.search-container {
+    max-width: 400px;
+    margin: 0 auto 3rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #333;
+    border-radius: 25px;
+    background: rgba(26, 26, 46, 0.8);
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #e94560;
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.heroes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.hero-card {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-card:hover {
+    transform: translateY(-10px);
+    border-color: #e94560;
+    box-shadow: 0 20px 40px rgba(233, 69, 96, 0.2);
+}
+
+.hero-card:hover .hero-info {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.hero-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-content {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.hero-name {
+    font-size: 1.5rem;
+    color: #e94560;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-attribute {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.attribute-strength { color: #ff6b6b; }
+.attribute-agility { color: #4ecdc4; }
+.attribute-intelligence { color: #45b7d1; }
+.attribute-universal { color: #f9ca24; }
+
+.hero-roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.role-tag {
+    padding: 0.3rem 0.8rem;
+    background: rgba(233, 69, 96, 0.2);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid #e94560;
+}
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.stat {
+    text-align: center;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #e94560;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.hero-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9) 0%, rgba(233, 69, 96, 0.9) 100%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.hero-description {
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.hero-abilities {
+    list-style: none;
+}
+
+.hero-abilities li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+/* Light theme adjustments */
+body.light-theme .hero-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.9) 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .search-input {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-color: #ddd;
+}
+
+body.light-theme .attr-btn {
+    background: rgba(233, 69, 96, 0.05);
+    color: #333;
+    border-color: #e94560;
+}
+
+body.light-theme .stat {
+    background: rgba(233, 69, 96, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .heroes-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1rem;
+    }
+    
+    .attribute-filters {
+        gap: 0.5rem;
+    }
+    
+    .attr-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .hero-content {
+        padding: 1rem;
+    }
+}

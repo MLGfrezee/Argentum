@@ -1,0 +1,219 @@
+/* Items Page Styles */
+.items-section {
+    padding: 6rem 0 4rem;
+    min-height: 100vh;
+}
+
+.category-filters {
+    display: flex;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.category-btn {
+    padding: 0.7rem 1.2rem;
+    border: 2px solid #e94560;
+    background: rgba(233, 69, 96, 0.1);
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+}
+
+.category-btn.active,
+.category-btn:hover {
+    background: #e94560;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(233, 69, 96, 0.3);
+}
+
+.category-icon {
+    font-size: 1.1rem;
+}
+
+.search-container {
+    max-width: 400px;
+    margin: 0 auto 3rem;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #333;
+    border-radius: 25px;
+    background: rgba(26, 26, 46, 0.8);
+    color: #fff;
+    font-size: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #e94560;
+    box-shadow: 0 0 15px rgba(233, 69, 96, 0.3);
+}
+
+.search-input::placeholder {
+    color: #888;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+}
+
+.item-card {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.9) 0%, rgba(22, 33, 62, 0.9) 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.item-card:hover {
+    transform: translateY(-5px);
+    border-color: #e94560;
+    box-shadow: 0 15px 35px rgba(233, 69, 96, 0.2);
+}
+
+.item-header {
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.item-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 10px rgba(233, 69, 96, 0.3));
+}
+
+.item-cost {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #e94560;
+    color: white;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.item-content {
+    padding: 1.5rem;
+}
+
+.item-name {
+    font-size: 1.3rem;
+    color: #e94560;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.item-category {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: #4ecdc4;
+}
+
+.item-description {
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.item-stats {
+    list-style: none;
+    padding: 0;
+}
+
+.item-stats li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.item-stats li:before {
+    content: "+";
+    color: #4ecdc4;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+/* Light theme adjustments */
+body.light-theme .item-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(240, 240, 240, 0.9) 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .search-input {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    border-color: #ddd;
+}
+
+body.light-theme .category-btn {
+    background: rgba(233, 69, 96, 0.05);
+    color: #333;
+    border-color: #e94560;
+}
+
+body.light-theme .item-description {
+    color: #666;
+}
+
+body.light-theme .item-stats li {
+    color: #333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .category-filters {
+        gap: 0.3rem;
+    }
+    
+    .category-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .item-content {
+        padding: 1rem;
+    }
+    
+    .item-header {
+        padding: 1rem;
+    }
+    
+    .item-image {
+        width: 60px;
+        height: 60px;
+    }
+}
